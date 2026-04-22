@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+	"target": "es6",
+	"module": "commonjs",
+	"strict": true,
+	"types": ["node", "express", "http-proxy", "jsonwebtoken", "mongodb", "ms"],
+	"outDir": "dist",
+	"sourceMap": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"]
+}
