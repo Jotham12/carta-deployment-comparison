@@ -18,11 +18,11 @@ create the StorageClass and PersistentVolumeClaim for shared CephFS storage
 
 Scripts and files in this layer
 
-setup-kubeadm.sh — prepares the control-plane and worker nodes for Kubernetes
-setup-cephfs-csi.sh — deploys the Ceph-CSI CephFS driver
-cephfs-storageclass.yaml — defines the CephFS StorageClass
-cephfs-pvc.yaml — creates the shared PersistentVolumeClaim
-namespace.yaml — creates the carta namespace
+- setup-kubeadm.sh — prepares the control-plane and worker nodes for Kubernetes
+- setup-cephfs-csi.sh — deploys the Ceph-CSI CephFS driver
+- cephfs-storageclass.yaml — defines the CephFS StorageClass
+- cephfs-pvc.yaml — creates the shared PersistentVolumeClaim
+- namespace.yaml — creates the carta namespace
 
 
 Outcome
