@@ -9,5 +9,8 @@ The CARTA controller provides a simple dashboard which authenticates users and a
 
 For installation and configuration instructions, and more detailed information about the controller's features, please consult [the full documentation on ReadTheDocs](https://carta-controller.readthedocs.io/en/dev/).
 
+
 If you encounter a problem with the controller or documentation, please submit an issue in the controller repo. If you need assistance in configuration or deployment, please contact the [CARTA helpdesk](mailto:support@carta.freshdesk.com).
+
+
 Although the links above point to the main CARTA Controller page, this repository focuses specifically on the deployment of CARTA in two different environments: Kubernetes in the cloud and HPC using Slurm as the resource manager. To reflect this, the repository is divided into two main folders, Kubernetes-deployment and hpc-deployment. Each folder includes a dedicated README file describing the scripts it contains and the steps required to run them.
