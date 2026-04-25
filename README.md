@@ -56,7 +56,7 @@ Deployment guide:
 
 The diagram below shows the CARTA components that this repository aims to combine across the two deployment approaches.
 
-![Architecture Diagram](architecture-diagram.png)
+![Architecture Diagram](diagram1.png)
 
 The architecture shows the main components involved in running CARTA in a multi-user environment.
 
