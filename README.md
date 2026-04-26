@@ -16,14 +16,14 @@ The purpose of this repository is to document how CARTA can be deployed in both 
 The Kubernetes deployment uses Kubernetes to manage CARTA services. In this setup, CARTA backend instances are launched as pods on worker nodes.
 
 - Overview: [Kubernetes Deployment README](https://github.com/Jotham12/carta-deployment-comparison/tree/main/Kubernetes-deployment)
-- Setup steps: [Kubernetes Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/carta-controller/SETUP.md)
+- Setup steps: [Kubernetes Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/tree/main/Kubernetes-deployment)
 
 ### HPC Deployment using Slurm
 
 The HPC deployment uses Slurm as the resource manager. In this setup, the CARTA controller runs on the login/control node and launches backend instances as Slurm jobs on compute nodes.
 
 - Overview: [HPC Deployment README](https://github.com/Jotham12/carta-deployment-comparison/tree/main/hpc-deployment)
-- Setup steps: [HPC Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/blob/main/hpc-deployment/SETUP.md)
+- Setup steps: [HPC Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/tree/main/hpc-deployment)
 
 ---
 
