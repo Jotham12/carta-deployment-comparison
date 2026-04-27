@@ -28,15 +28,17 @@ Before deploying CARTA on Kubernetes, make sure the following components are ava
   For a kubeadm-based setup, the following scripts can be used as a reference:
  The control-plane node can be prepared using:
 
-[master-node.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/master-node.sh)
+  [master-node.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/master-node.sh)
 
-Worker nodes can be prepared using:
+  Worker nodes can be prepared using:
 
-[worker-node.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/worker-node.sh)
+  [worker-node.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/worker-node.sh)
 
-MongoDB To Stores CARTA controller state/session-related data
-[mongodb.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/deploy-mongodb-community.sh)
+  MongoDB To Stores CARTA controller state/session-related data
 
+  ```bash
+  [mongodb.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/deploy-mongodb-community.sh)
+  ```
 * An ingress controller.
 
   An ingress controller is required if the CARTA controller will be accessed externally through a domain name or reverse proxy.
