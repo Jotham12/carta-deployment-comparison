@@ -37,7 +37,7 @@ Before deploying CARTA on Kubernetes, make sure the following components are ava
   MongoDB To Stores CARTA controller state/session-related data
 
   ```bash
-  [mongodb.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/deploy-mongodb-community.sh)
+  https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/deploy-mongodb-community.sh
   ```
 * An ingress controller.
 
