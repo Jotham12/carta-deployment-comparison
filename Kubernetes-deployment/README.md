@@ -26,10 +26,16 @@ Before deploying CARTA on Kubernetes, make sure the following components are ava
   This can be created using `kubeadm`, Minikube, Kind, MicroK8s, or any other Kubernetes distribution.
 
   For a kubeadm-based setup, the following scripts can be used as a reference:
+ The control-plane node can be prepared using:
 
-  ```text
-  https://github.com/techiescamp/kubeadm-scripts/tree/main/scripts
-  ```
+[master-node.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/master-node.sh)
+
+Worker nodes can be prepared using:
+
+[worker-node.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/worker-node.sh)
+
+MongoDB To Stores CARTA controller state/session-related data
+[mongodb.sh](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/scripts/infrastructure-layer/deploy-mongodb-community.sh)
 
 * An ingress controller.
 
