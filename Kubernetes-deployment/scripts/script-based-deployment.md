@@ -15,25 +15,6 @@ The deployment uses:
 
 ---
 
-## Deployment Overview
-
-The deployment follows these steps:
-
-1. Create the Kubernetes cluster.
-2. Connect CephFS to Kubernetes using Ceph CSI.
-3. Create the CARTA namespace.
-4. Create the CephFS PersistentVolumeClaim.
-5. Deploy MongoDB for CARTA controller state.
-6. Create the CARTA backend ConfigMap.
-7. Create the CARTA controller configuration Secret.
-8. Create extra users for UID/GID mapping.
-9. Create the `nsswitch.conf` ConfigMap.
-10. Deploy the CARTA controller.
-11. Set CephFS file permissions.
-12. Access the CARTA controller through port forwarding or SSH tunnelling.
-
----
-
 # 1. Create the Kubernetes Cluster
 
 The Kubernetes cluster is created using `kubeadm`.
