@@ -39,7 +39,44 @@ This separation is used to avoid mixing cluster/storage preparation with the app
 
 ## 1. Script-Based Infrastructure Setup
 
-This part prepares the Kubernetes and storage infrastructure before the CARTA controller is deployed.
+This part prepares the Kubernetes and storage infrastructure before the CARTA controller is deployed. The two scripts common.sh and master.sh automate the setup of a Kubernetes cluster using kubeadm with containerd as the container runtime.
+
+- ['common.sh'](./scripts/infrastructure-layer/worker.sh)
+   Common setup script for all nodes (control plane and worker nodes). This script:
+  - Disables swap
+  - Configures kernel modules (overlay, br_netfilter)
+  - Sets up networking parameters
+  - Installs containerd runtime
+  - Installs and configures crictl
+  - Installs kubelet, kubeadm, and kubectl
+
+- [`master-node.sh`](./scripts/infrastructure-layer/master.sh)
+  Control plane (master) node setup script. This script:
+  - Pulls required Kubernetes images
+  - Initializes the control plane using kubeadm
+  - Configures kubeconfig
+  - Installs Calico network plugin
+## Usage
+## i.  Setup Control Plane Node
+
+Run the common setup script first, then initialize the Kubernetes control plane.
+
+```bash 
+# Run common setup
+sudo bash common.sh
+
+# Initialize control plane
+sudo bash master.sh
+
+## ii. Setup Worker Nodes
+Run this script on worker node
+```bash
+# Run common setup on each worker node
+sudo bash common.sh
+
+# Join the cluster using the command from master node output
+sudo kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+
 
 It includes:
 
@@ -52,8 +89,7 @@ It includes:
 
 Main files:
 
-- [`master-node.sh`](./scripts/infrastructure-layer/master-node.sh)
-- [`worker-node.sh`](./scripts/infrastructure-layer/worker-node.sh)
+
 - [`ceph-csi-plugin.sh`](./scripts/infrastructure-layer/ceph-csi-plugin.sh)
 - [`deploy-mongodb-community.sh`](./scripts/infrastructure-layer/deploy-mongodb-community.sh)
 - [`cephfs-storageclass.yaml`](./scripts/infrastructure-layer/cephfs-storageclass.yaml)
