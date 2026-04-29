@@ -932,3 +932,13 @@ After completing the deployment:
 
 # Notes
 
+## Single-User CARTA Backend Deployment for Testing
+
+For testing purposes, a single CARTA backend can be deployed directly on Kubernetes without using the multi-user CARTA controller. This setup is useful for testing the backend container, CephFS PVC mounting, and WebSocket connection between the frontend and backend.
+
+The multi-user CARTA controller deployment is derived from this idea, but extends it programmatically by creating and managing backend pods dynamically for authenticated users.
+
+The single-backend deployment guide can be found here:
+
+```text
+Kubernetes-deployment/scripts/User-Deploment.md

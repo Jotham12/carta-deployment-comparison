@@ -16,44 +16,6 @@ The main goal of this setup is to allow users to authenticate through the CARTA 
 
 ---
 
-Prerequisites
-===
-
-Before starting the deployment, make sure the following are available.
-
-* At least one login/control node.
-
-  The login node runs the CARTA controller, Slurm controller services, Slurm accounting services, and is responsible for submitting backend jobs to the compute nodes.
-
-* One or more compute nodes.
-
-  The compute nodes run `slurmd` and execute CARTA backend processes submitted by the controller.
-
-* Shared storage mounted on all nodes.
-
-  This deployment assumes that CephFS or another shared filesystem is mounted on the login node and compute nodes. The shared filesystem is used for user home directories, CARTA data directories, Slurm configuration sharing, and user-specific working directories.
-
-* Passwordless or administrative SSH access to all nodes.
-
-  This is required so that setup scripts can be copied and executed on the relevant machines.
-
-* Ubuntu/Debian-based nodes.
-
-  The provided scripts use `apt-get`, `systemctl`, `ufw`, and Debian/Ubuntu package names.
-
-* Slurm source repository access.
-
-  The setup scripts clone the official Slurm repository in order to build `nss_slurm`.
-
-  ```text
-  https://github.com/SchedMD/slurm.git
-  ```
-
-* CARTA controller installed on the login node.
-
-  The CARTA controller should be installed and configured on the login node because it is responsible for receiving user sessions and launching CARTA backend jobs.
-
----
 
 Deployment Overview
 ===

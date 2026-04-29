@@ -7,6 +7,8 @@ This repository compares two deployment approaches for the Cube Analysis and Ren
 
 The purpose of this repository is to document how CARTA can be deployed in both environments and how the main CARTA components can be combined with shared storage, authentication, backend execution, and monitoring services.
 
+3. ***Use Deployment Mode/ local-deployment**
+This deployment isn't part of the comparison we put it here for a single user who wants to observe the usses of CARTA we added a bash script under the local-deployment folder `installing_carta.sh` 
 ---
 
 ## Deployment Guides
