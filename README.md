@@ -17,8 +17,8 @@ This deployment isn't part of the comparison we put it here for a single user wh
 
 The Kubernetes deployment uses Kubernetes to manage CARTA services. In this setup, CARTA backend instances are launched as pods on worker nodes.
 
-- Overview: [Kubernetes Deployment README](https://github.com/Jotham12/carta-deployment-comparison/tree/main/Kubernetes-deployment)
-- Setup steps: [Kubernetes Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/tree/main/Kubernetes-deployment)
+- Overview: [Kubernetes Deployment Repository](https://github.com/Jotham12/carta-deployment-comparison/tree/main/Kubernetes-deployment)
+- Setup steps: [Kubernetes Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/script-based-deployment.md)
 
 ### HPC Deployment using Slurm
 
