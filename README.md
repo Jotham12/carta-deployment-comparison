@@ -77,18 +77,3 @@ sudo chown -R <uid>:<gid> /mnt/mycephfs/images/<username>
 sudo chmod 700 /mnt/mycephfs/images/<username>
 ---
 
-## Repository Structure
-
-```text
-carta-deployment-comparison/
-├── Kubernetes-deployment/
-│   ├── README.md
-│   ├── SETUP.md
-│   ├── carta-controller/
-│   └── scripts/
-│
-├── hpc-deployment/
-   ├── README.md
-   ├── SETUP.md
-   ├── carta-controller/
-   └── scripts/
