@@ -1,0 +1,1 @@
+The `installing_carta.sh` script installs CARTA for User Deployment Mode. This mode supports running CARTA either on a single computer or across two separate computers without the `carta-controller`. In this setup, the user manually starts `carta_backend` on the machine where the image data is located and then connects to it from the CARTA frontend using a web browser.

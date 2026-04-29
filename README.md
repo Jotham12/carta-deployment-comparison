@@ -7,7 +7,7 @@ This repository compares two deployment approaches for the Cube Analysis and Ren
 
 The purpose of this repository is to document how CARTA can be deployed in both environments and how the main CARTA components can be combined with shared storage, authentication, backend execution, and monitoring services.
 
-3. ***Use Deployment Mode/ local-deployment**
+3. **Use Deployment Mode/ local-deployment**
 This deployment isn't part of the comparison we put it here for a single user who wants to observe the usses of CARTA we added a bash script under the local-deployment folder `installing_carta.sh` 
 ---
 
@@ -17,14 +17,13 @@ This deployment isn't part of the comparison we put it here for a single user wh
 
 The Kubernetes deployment uses Kubernetes to manage CARTA services. In this setup, CARTA backend instances are launched as pods on worker nodes.
 
-- Overview: [Kubernetes Deployment Repository](https://github.com/Jotham12/carta-deployment-comparison/tree/main/Kubernetes-deployment)
 - Setup steps: [Kubernetes Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/script-based-deployment.md)
 
 ### HPC Deployment using Slurm
 
 The HPC deployment uses Slurm as the resource manager. In this setup, the CARTA controller runs on the login/control node and launches backend instances as Slurm jobs on compute nodes.
 
-- Overview: [HPC Deployment README](https://github.com/Jotham12/carta-deployment-comparison/tree/main/hpc-deployment)
+
 - Setup steps: [HPC Deployment SETUP](https://github.com/Jotham12/carta-deployment-comparison/tree/main/hpc-deployment)
 
 ---
@@ -44,6 +43,38 @@ The backend execution layer differs between the two deployments:
 
 CephFS provides shared access to FITS image data. A container image registry or image store provides runtime images where containers are used. Prometheus and metrics storage support monitoring.
 
+## Login Page
+After successfully deploying CARTA in either the Kubernetes or HPC/Slurm environment, the CARTA welcome login page should be displayed in the browser. In this setup, a single CARTA frontend is launched and accessed through one browser session at a time. Users log in using the accounts defined in the `extrausers` configuration described in each deployment setup.
+
+![CARTA login](carta-login.png)
+
+## CARTA Images
+
+To test CARTA, you can download example FITS images from the IDIA CARTA examples page:
+
+```text
+https://gateway.idia.ac.za/pages/carta-examples/
+```
+
+After downloading the images, place them in the directory that CARTA can access.
+
+For example, in the Kubernetes deployment using CephFS:
+
+```bash
+/mnt/mycephfs/<username>/
+```
+
+or, depending on your folder structure:
+
+```bash
+/mnt/mycephfs/images/<username>/
+```
+
+Make sure the files are owned by the correct user and that directory permissions are set properly:
+
+```bash
+sudo chown -R <uid>:<gid> /mnt/mycephfs/images/<username>
+sudo chmod 700 /mnt/mycephfs/images/<username>
 ---
 
 ## Repository Structure
