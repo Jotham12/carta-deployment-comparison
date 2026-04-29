@@ -29,7 +29,7 @@ This deployment includes:
 
 Setup guide:
 
-[Kubernetes Deployment Setup](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/script-based-deployment.md)
+[Kubernetes Deployment Setup](https://github.com/Jotham12/carta-deployment-comparison/blob/main/Kubernetes-deployment/k8s-setup.md)
 
 ---
 
