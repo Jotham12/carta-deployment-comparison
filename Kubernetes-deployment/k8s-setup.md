@@ -120,6 +120,25 @@ csi-cephfsplugin-xxxxx                         Running
 csi-cephfsplugin-provisioner-xxxxxxxxxx-xxxxx  Running
 ```
 
+Create CephFs secret
+
+```text
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cephfs-secret
+  namespace: default
+type: Opaque
+stringData:
+  userID: allvms
+  userKey: "Add value here"
+```
+
+Apply secret
+
+```text
+kubectl apply -f cephfs-secret.yaml
+```
 ---
 
 # 3. Create the CARTA Namespace
