@@ -33,46 +33,6 @@ The HPC deployment consists of the following main components:
 | CephFS | Login and compute nodes | Provides shared user and data directories |
 | CARTA backend | Compute nodes | Runs user CARTA backend sessions inside the user's folder |
 
----
-
-Repository Scripts
-===
-
-This deployment uses two main infrastructure setup scripts.
-
-**Login/control node setup script**
-
-```text
-https://github.com/Jotham12/carta-deployment-comparison/blob/main/hpc-deployment/scripts/infrastructure-setup/login-node.sh
-```
-
-This script is used on the login/control node. It installs and configures:
-
-- Munge
-- MariaDB
-- SlurmDBD
-- Slurm controller
-- Slurm configuration files
-- `nss_slurm`
-- Firewall rules
-- Slurm services
-
-**Compute node setup script**
-
-```text
-https://github.com/Jotham12/carta-deployment-comparison/blob/main/hpc-deployment/scripts/infrastructure-setup/compute-node.sh
-```
-
-This script is used on each compute node. It installs and configures:
-
-- Munge
-- Slurmd
-- Slurm worker configuration
-- `nss_slurm`
-- Firewall rules
-- Compute node Slurm services
-
----
 
 Cluster Layout
 ===
@@ -132,6 +92,12 @@ Login Node Setup
 ===
 
 The login/control node is responsible for running the main Slurm services and the CARTA controller.
+
+First install mongoDB to stores controller/session/application state
+
+```text
+carta-deployment-comparison/main/hpc-deployment/scripts/infrastructure-setup/mongodb-install.sh
+```
 
 On the login node, download or copy the login-node setup script:
 
