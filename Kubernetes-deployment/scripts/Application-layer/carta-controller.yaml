@@ -68,6 +68,8 @@ spec:
         app: carta-controller
     spec:
       serviceAccountName: carta-controller-sa
+      nodeSelector:
+        carta-role: backend
       containers:
         - name: carta-controller
           image: sjotham/carta-controller:k8s-test
