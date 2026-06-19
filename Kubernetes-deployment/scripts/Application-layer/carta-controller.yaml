@@ -1,3 +1,40 @@
+```yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: carta-resource-quota
+  namespace: carta
+spec:
+  hard:
+    requests.cpu: "4"
+    requests.memory: "8Gi"
+    limits.cpu: "8"
+    limits.memory: "16Gi"
+    pods: "20"
+    persistentvolumeclaims: "10"
+    requests.storage: "100Gi"
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: carta-limit-range
+  namespace: carta
+spec:
+  limits:
+    - type: Container
+      defaultRequest:
+        cpu: "500m"
+        memory: "512Mi"
+      default:
+        cpu: "2"
+        memory: "2Gi"
+      min:
+        cpu: "100m"
+        memory: "128Mi"
+      max:
+        cpu: "4"
+        memory: "4Gi"
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -85,11 +122,18 @@ spec:
             - name: K8S_IMAGES_PVC
               value: "cephfs-images-pvc"
             - name: CARTA_CONFIG
-              value: /etc/carta/config.json
+              value: "/etc/carta/config.json"
             - name: K8S_BACKEND_IMG
               value: "quay.io/aikema/carta_k8s_backend"
           ports:
             - containerPort: 8000
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "1"
+              memory: "1Gi"
           securityContext:
             privileged: true
           volumeMounts:
@@ -133,3 +177,5 @@ spec:
     - protocol: TCP
       port: 8000
       targetPort: 8000
+```
+
